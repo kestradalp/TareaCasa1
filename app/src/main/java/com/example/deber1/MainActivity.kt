@@ -23,8 +23,10 @@ class MainActivity : AppCompatActivity() {
         val txpTelefono = findViewById<EditText>(R.id.txpTelefono).text.toString()
         val rdnGenero = if (findViewById<RadioButton>(R.id.rdbFemenino).isChecked ){
             findViewById<RadioButton>(R.id.rdbFemenino).text.toString()
-        } else {
+        } else if(findViewById<RadioButton>(R.id.rdbMasculino).isChecked) {
             findViewById<RadioButton>(R.id.rdbMasculino).text.toString()
+        } else {
+            ""
         }
 
         if(!(txtNombre.isEmpty() || txdFecNac.isEmpty() || rdnGenero.isEmpty() || txpTelefono.isEmpty())){
